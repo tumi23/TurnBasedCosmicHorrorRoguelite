@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState
+public class GameState : MonoBehaviour
 {
     private int clues = 0;
     private int artifacts = 0;
@@ -10,7 +10,7 @@ public class GameState
 
     public int updateClues(int change)
     {
-        if (clues += change < 0)
+        if ((clues += change) < 0)
             return -1;
         clues += change;
         return clues;
@@ -18,7 +18,7 @@ public class GameState
 
     public int updateArtifacts(int change)
     {
-        if (artifacts += change < 0)
+        if ((artifacts += change) < 0)
             return -1;
         artifacts += change;
         return artifacts;
@@ -26,7 +26,7 @@ public class GameState
 
     public int updateTruth(int change)
     {
-        if (truth += change < 0)
+        if ((truth += change) < 0)
             return -1;
         truth += change;
         return truth;
